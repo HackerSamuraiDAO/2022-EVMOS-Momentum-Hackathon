@@ -1,0 +1,6 @@
+[submodule "submodules/evmos"]
+	path = submodules/evmos
+	url = git@github.com:HackerSamuraiDAO/evmos
+[submodule "submodules/yui-ibc-solidity"]
+	path = submodules/yui-ibc-solidity
+	url = git@github.com:HackerSamuraiDAO/yui-ibc-solidity
