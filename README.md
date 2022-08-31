@@ -2,7 +2,9 @@
 
 ## Development
 
-### Init
+### Init Submodules
+
+#### Install Dependencies
 
 ```
 git submodule init

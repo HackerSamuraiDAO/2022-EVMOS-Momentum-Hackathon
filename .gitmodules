@@ -4,3 +4,9 @@
 [submodule "submodules/yui-ibc-solidity"]
 	path = submodules/yui-ibc-solidity
 	url = git@github.com:HackerSamuraiDAO/yui-ibc-solidity
+[submodule "submodules/the-laurel-demos"]
+	path = submodules/the-laurel-demos
+	url = git@github.com:HackerSamuraiDAO/the-laurel-demos
+[submodule "submodules/axelar-local-gmp-examples"]
+	path = submodules/axelar-local-gmp-examples
+	url = git@github.com:HackerSamuraiDAO/axelar-local-gmp-examples

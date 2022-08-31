@@ -105,3 +105,6 @@ dist
 
 # misc
 .DS_Store
+
+# yarn
+package-lock.json
