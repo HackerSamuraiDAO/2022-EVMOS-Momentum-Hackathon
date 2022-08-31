@@ -16,6 +16,7 @@
     "poc:cosmosjs:tx": "yarn hardhat run poc/cosmosjs/tx.ts",
     "poc:cosmosjs:mnemonic": "yarn hardhat run poc/cosmosjs/mnemonic.ts",
     "poc:cosmosjs:signer": "yarn hardhat run poc/cosmosjs/signer.ts",
+    "poc:evmosjs": "yarn hardhat run poc/evmosjs/index.ts",
     "poc:relayer": "yarn hardhat run poc/relayer/index.ts",
     "test": "yarn hardhat test",
     "coverage": "yarn hardhat coverage",
@@ -59,8 +60,5 @@
     "ts-node": "^10.9.1",
     "typechain": "^8.1.0",
     "typescript": "^4.7.4"
-  },
-  "dependencies": {
-    "@cosmjs/launchpad": "^0.27.1"
   }
 }
