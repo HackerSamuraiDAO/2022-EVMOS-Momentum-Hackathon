@@ -1,7 +1,7 @@
 {
   "app": {
     "name": "NFTHashi",
-    "description": "Crosschain NFT Bridge with Multichain Storage",
+    "description": "Crosschain NFT Bridge with Cosmos IBC",
     "uri": "https://nfthashi-2022-web3-infinity-submission.vercel.app"
   },
   "links": {
