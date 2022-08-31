@@ -20,7 +20,7 @@ https://github.com/HackerSamuraiDAO/2022-EVMOS-Momentum-Hackathon/issues/7
 
 Deployed contract info is kept here.
 
-https://github.com/HackerSamuraiDAO/2022-EVMOS-Momentum-Hackathon/issues/7
+https://github.com/HackerSamuraiDAO/2022-EVMOS-Momentum-Hackathon/blob/main/packages/contracts/networks.json
 
 - Executor
   - Execute bridged tx in traget chain
@@ -50,3 +50,12 @@ yarn
 yarn build
 yarn test
 ```
+
+### Frontend
+
+```
+yarn
+yarn dev
+```
+
+It required moralis API key, API secret key, relayer key
