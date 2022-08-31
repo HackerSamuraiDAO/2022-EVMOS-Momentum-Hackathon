@@ -3,7 +3,6 @@ import { SigningStargateClient, StargateClient } from "@cosmjs/stargate";
 import { ethers } from "ethers";
 
 import {
-  ALICE_ADDRESS_EVMOS_EVM,
   ALICE_ADDRESS_THETA,
   EVM_RPC_EVMOS,
   FAUCET_ADDRESS_EVMOS,
@@ -17,6 +16,8 @@ import {
   MNEMONIC,
   TENDERMINT_RPC_EVMOS,
   TENDERMINT_RPC_THETA,
+  THETA_PREFIX,
+  THETA_TOKEN,
 } from "./lib/constant";
 
 async function main() {
@@ -24,7 +25,7 @@ async function main() {
   const thetaClient = await StargateClient.connect(TENDERMINT_RPC_THETA);
 
   const thetaAliceSigner = await DirectSecp256k1HdWallet.fromMnemonic(MNEMONIC, {
-    prefix: "cosmos",
+    prefix: THETA_PREFIX,
   });
   console.log("Alice Signer", thetaAliceSigner);
   const signingClient = await SigningStargateClient.connectWithSigner(TENDERMINT_RPC_THETA, thetaAliceSigner);
@@ -34,9 +35,9 @@ async function main() {
   const thetaResult = await signingClient.sendTokens(
     ALICE_ADDRESS_THETA,
     FAUCET_ADDRESS_THETA,
-    [{ denom: "uatom", amount: "1" }],
+    [{ denom: THETA_TOKEN, amount: "1" }],
     {
-      amount: [{ denom: "uatom", amount: GAS_FEE_THETA }],
+      amount: [{ denom: THETA_TOKEN, amount: GAS_FEE_THETA }],
       gas: GAS_LIMIT_THETA,
     }
   );

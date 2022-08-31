@@ -16,3 +16,6 @@
 [submodule "submodules/gaia"]
 	path = submodules/gaia
 	url = git@github.com:HackerSamuraiDAO/gaia
+[submodule "submodules/ibc-ts-relayer-example"]
+	path = submodules/ibc-ts-relayer-example
+	url = git@github.com:HackerSamuraiDAO/ibc-ts-relayer-example
