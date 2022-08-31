@@ -118,11 +118,11 @@ export const Main: React.FC = () => {
     setSelectedNFT(undefined);
   };
 
-  const swapChainId = () => {
-    clear();
-    setSourceChainId(targetChainId);
-    setTargetChainId(sourceChainId);
-  };
+  // const swapChainId = () => {
+  //   clear();
+  //   setSourceChainId(targetChainId);
+  //   setTargetChainId(sourceChainId);
+  // };
 
   const mintNFTFromFaucet = async () => {
     if (!chain || !signer) {
@@ -222,13 +222,14 @@ export const Main: React.FC = () => {
             <Box pt="8">
               <IconButton
                 color="gray.800"
-                onClick={swapChainId}
+                // onClick={swapChainId}
                 aria-label="swap"
                 icon={<VscArrowSwap size="12px" />}
                 background="white"
                 rounded="full"
                 size="xs"
                 variant={"outline"}
+                disabled={true}
               />
             </Box>
             <VStack w="full">
