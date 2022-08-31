@@ -1,0 +1,28 @@
+{
+  "4": {
+    "name": "Rinkeby",
+    "domain": 1111,
+    "contracts": {
+      "wrapped721": "0xA12915aC79947482Ab35Ce7A42BF215B190f5754",
+      "executor": "0x4c0e868594D621Ed81F2dC2071e5B0066D384b33",
+      "handler": "0x1F506545E846a613f78FD8493544fc6676a9E251",
+      "bridge": "0xec1f27230fE70d3E5bccAa5BB87454F690BF89c7",
+      "faucet": "0x5B26da852945f37638Ff987c060022e8159a57c5"
+    },
+    "explorer": "https://rinkeby.etherscan.io/",
+    "rpc": "https://rinkeby.infura.io/v3/95f65ab099894076814e8526f52c9149"
+  },
+  "9000": {
+    "name": "Evmos",
+    "domain": 1,
+    "contracts": {
+      "wrapped721": "0xa61241a9D6a1EFA4F468d49d76Ac158F6aB29240",
+      "executor": "0x2043a8E110d3609C2015D5AEd9b89F190cEd4624",
+      "handler": "0x60f6959126be3501f1D0B7da39CD5eB9e17e1164",
+      "bridge": "0x4f7d399880a40bA1c278a0A2564eE12c534d0B2C",
+      "faucet": "0xfB8d92A2b90FD55c257e88e81DFa972CcA360d30"
+    },
+    "explorer": "https://evm.evmos.dev/",
+    "rpc": "https://eth.bd.evmos.dev:8545"
+  }
+}

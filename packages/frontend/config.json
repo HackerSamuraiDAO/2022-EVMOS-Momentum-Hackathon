@@ -1,0 +1,48 @@
+{
+  "app": {
+    "name": "NFTHashi",
+    "description": "Crosschain NFT Bridge with Multichain Storage",
+    "uri": "https://nfthashi-2022-web3-infinity-submission.vercel.app"
+  },
+  "links": {
+    "doc": {
+      "uri": "https://devpost.com/software/vnfts"
+    },
+    "discord": {
+      "uri": "https://discord.gg/TnQX6ZjN4Z"
+    },
+    "github": {
+      "uri": "https://github.com/nfthashi/2022-Web3Infinity-submission"
+    }
+  },
+  "wallets": {
+    "injected": {
+      "name": "Metamask",
+      "icon": "metamask.webp",
+      "connector": "ingectedConnector"
+    },
+    "walletConnect": {
+      "name": "Wallet Connect",
+      "icon": "walletConnect.png",
+      "connector": "walletConnectConnector"
+    }
+  },
+  "styles": {
+    "button": {
+      "rounded": "2xl",
+      "size": "lg",
+      "fontSize": "sm"
+    },
+    "text": {
+      "color": {
+        "primary": "gray.800",
+        "secondary": "white"
+      }
+    },
+    "background": {
+      "color": {
+        "main": "white"
+      }
+    }
+  }
+}
