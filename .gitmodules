@@ -10,3 +10,9 @@
 [submodule "submodules/axelar-local-gmp-examples"]
 	path = submodules/axelar-local-gmp-examples
 	url = git@github.com:HackerSamuraiDAO/axelar-local-gmp-examples
+[submodule "submodules/ibc-relayer"]
+	path = submodules/ibc-relayer
+	url = git@github.com:HackerSamuraiDAO/ibc-relayer
+[submodule "submodules/gaia"]
+	path = submodules/gaia
+	url = git@github.com:HackerSamuraiDAO/gaia

@@ -1,44 +1,67 @@
 import { DirectSecp256k1HdWallet } from "@cosmjs/proto-signing";
 import { SigningStargateClient, StargateClient } from "@cosmjs/stargate";
+import { ethers } from "ethers";
 
-import { FAUCET_ADDRESS, MNEMONIC } from "./lib/constant";
+import {
+  ALICE_ADDRESS_EVMOS_EVM,
+  ALICE_ADDRESS_THETA,
+  EVM_RPC_EVMOS,
+  FAUCET_ADDRESS_EVMOS,
+  FAUCET_ADDRESS_EVMOS_EVM,
+  FAUCET_ADDRESS_THETA,
+  GAS_FEE_THETA,
+  GAS_LIMIT_THETA,
+  METAMASK_ADDRESS,
+  METAMASK_ADDRESS_EVMOS,
+  METAMASK_PRIVATE_KEY,
+  MNEMONIC,
+  TENDERMINT_RPC_EVMOS,
+  TENDERMINT_RPC_THETA,
+} from "./lib/constant";
 
 async function main() {
-  const rpc = "rpc.sentry-01.theta-testnet.polypore.xyz:26657";
-  const client = await StargateClient.connect(rpc);
-  console.log("With client, chain id:", await client.getChainId(), ", height:", await client.getHeight());
+  // console.log("processing theta...");
+  // const thetaClient = await StargateClient.connect(TENDERMINT_RPC_THETA);
 
-  const aliceSigner = await DirectSecp256k1HdWallet.fromMnemonic(MNEMONIC, {
-    prefix: "cosmos",
+  // const thetaAliceSigner = await DirectSecp256k1HdWallet.fromMnemonic(MNEMONIC, {
+  //   prefix: "cosmos",
+  // });
+  // console.log("Alice Signer", thetaAliceSigner);
+  // const signingClient = await SigningStargateClient.connectWithSigner(TENDERMINT_RPC_THETA, thetaAliceSigner);
+
+  // console.log("Alice balance before:", await thetaClient.getAllBalances(ALICE_ADDRESS_THETA));
+  // console.log("Faucet balance before:", await thetaClient.getAllBalances(FAUCET_ADDRESS_THETA));
+  // const thetaResult = await signingClient.sendTokens(
+  //   ALICE_ADDRESS_THETA,
+  //   FAUCET_ADDRESS_THETA,
+  //   [{ denom: "uatom", amount: "1" }],
+  //   {
+  //     amount: [{ denom: "uatom", amount: GAS_FEE_THETA }],
+  //     gas: GAS_LIMIT_THETA,
+  //   }
+  // );
+  // console.log("Transfer result:", thetaResult);
+  // console.log("Alice balance after:", await thetaClient.getAllBalances(ALICE_ADDRESS_THETA));
+  // console.log("Faucet balance after:", await thetaClient.getAllBalances(FAUCET_ADDRESS_THETA));
+
+  console.log("processing evmos...");
+  const evmosClient = await StargateClient.connect(TENDERMINT_RPC_EVMOS);
+  console.log("Alice balance before:", await evmosClient.getAllBalances(METAMASK_ADDRESS_EVMOS));
+  console.log("Faucet balance before:", await evmosClient.getAllBalances(FAUCET_ADDRESS_EVMOS));
+
+  const provider = new ethers.providers.JsonRpcProvider(EVM_RPC_EVMOS);
+  const wallet = new ethers.Wallet(METAMASK_PRIVATE_KEY, provider);
+
+  const evmosTx = await wallet.sendTransaction({
+    from: METAMASK_ADDRESS,
+    to: FAUCET_ADDRESS_EVMOS_EVM,
+    value: "1",
   });
+  const evmosResult = await evmosTx.wait();
+  console.log("Transfer result:", evmosResult);
 
-  console.log("Alice Signer", aliceSigner);
-
-  const [aliceAccount] = await aliceSigner.getAccounts();
-  const alice = aliceAccount.address;
-  console.log("Alice's address from signer", alice);
-
-  const signingClient = await SigningStargateClient.connectWithSigner(rpc, aliceSigner);
-
-  console.log(
-    "With signing client, chain id:",
-    await signingClient.getChainId(),
-    ", height:",
-    await signingClient.getHeight()
-  );
-
-  console.log("Alice balance before:", await client.getAllBalances(alice));
-  console.log("Faucet balance before:", await client.getAllBalances(FAUCET_ADDRESS));
-
-  const result = await signingClient.sendTokens(alice, FAUCET_ADDRESS, [{ denom: "uatom", amount: "1" }], {
-    amount: [{ denom: "uatom", amount: "500" }],
-    gas: "200000",
-  });
-
-  console.log("Transfer result:", result);
-
-  console.log("Alice balance after:", await client.getAllBalances(alice));
-  console.log("Faucet balance after:", await client.getAllBalances(FAUCET_ADDRESS));
+  console.log("Alice balance after:", await evmosClient.getAllBalances(METAMASK_ADDRESS_EVMOS));
+  console.log("Faucet balance after:", await evmosClient.getAllBalances(FAUCET_ADDRESS_EVMOS));
 }
 
 main().catch((error) => {
