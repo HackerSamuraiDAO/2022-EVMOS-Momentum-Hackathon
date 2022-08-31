@@ -20,29 +20,29 @@ import {
 } from "./lib/constant";
 
 async function main() {
-  // console.log("processing theta...");
-  // const thetaClient = await StargateClient.connect(TENDERMINT_RPC_THETA);
+  console.log("processing theta...");
+  const thetaClient = await StargateClient.connect(TENDERMINT_RPC_THETA);
 
-  // const thetaAliceSigner = await DirectSecp256k1HdWallet.fromMnemonic(MNEMONIC, {
-  //   prefix: "cosmos",
-  // });
-  // console.log("Alice Signer", thetaAliceSigner);
-  // const signingClient = await SigningStargateClient.connectWithSigner(TENDERMINT_RPC_THETA, thetaAliceSigner);
+  const thetaAliceSigner = await DirectSecp256k1HdWallet.fromMnemonic(MNEMONIC, {
+    prefix: "cosmos",
+  });
+  console.log("Alice Signer", thetaAliceSigner);
+  const signingClient = await SigningStargateClient.connectWithSigner(TENDERMINT_RPC_THETA, thetaAliceSigner);
 
-  // console.log("Alice balance before:", await thetaClient.getAllBalances(ALICE_ADDRESS_THETA));
-  // console.log("Faucet balance before:", await thetaClient.getAllBalances(FAUCET_ADDRESS_THETA));
-  // const thetaResult = await signingClient.sendTokens(
-  //   ALICE_ADDRESS_THETA,
-  //   FAUCET_ADDRESS_THETA,
-  //   [{ denom: "uatom", amount: "1" }],
-  //   {
-  //     amount: [{ denom: "uatom", amount: GAS_FEE_THETA }],
-  //     gas: GAS_LIMIT_THETA,
-  //   }
-  // );
-  // console.log("Transfer result:", thetaResult);
-  // console.log("Alice balance after:", await thetaClient.getAllBalances(ALICE_ADDRESS_THETA));
-  // console.log("Faucet balance after:", await thetaClient.getAllBalances(FAUCET_ADDRESS_THETA));
+  console.log("Alice balance before:", await thetaClient.getAllBalances(ALICE_ADDRESS_THETA));
+  console.log("Faucet balance before:", await thetaClient.getAllBalances(FAUCET_ADDRESS_THETA));
+  const thetaResult = await signingClient.sendTokens(
+    ALICE_ADDRESS_THETA,
+    FAUCET_ADDRESS_THETA,
+    [{ denom: "uatom", amount: "1" }],
+    {
+      amount: [{ denom: "uatom", amount: GAS_FEE_THETA }],
+      gas: GAS_LIMIT_THETA,
+    }
+  );
+  console.log("Transfer result:", thetaResult);
+  console.log("Alice balance after:", await thetaClient.getAllBalances(ALICE_ADDRESS_THETA));
+  console.log("Faucet balance after:", await thetaClient.getAllBalances(FAUCET_ADDRESS_THETA));
 
   console.log("processing evmos...");
   const evmosClient = await StargateClient.connect(TENDERMINT_RPC_EVMOS);
