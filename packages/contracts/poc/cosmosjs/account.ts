@@ -4,7 +4,7 @@ import { evmosToEth } from "@tharsis/address-converter";
 import { ethers } from "ethers";
 
 import {
-  EVM_RPC_EVMOS,
+  EVM_RPC_EVMOS_TESTNET,
   EVMOS_PREFIX,
   JUNO_PREFIX,
   MNEMONIC,
@@ -47,7 +47,7 @@ async function main() {
   console.log("evmAccount:", evmosAccount.address);
   console.log("evmAccount balance:", await evmosClient.getAllBalances(evmosAccount.address));
 
-  const provider = new ethers.providers.JsonRpcProvider(EVM_RPC_EVMOS);
+  const provider = new ethers.providers.JsonRpcProvider(EVM_RPC_EVMOS_TESTNET);
   const evmAddress = evmosToEth(evmosAccount.address);
   console.log("evmAccount evm address by evmosToEth:", evmAddress);
   console.log("evmAccount evm address balance:", await provider.getBalance(evmAddress));

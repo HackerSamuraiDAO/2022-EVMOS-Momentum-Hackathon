@@ -4,7 +4,7 @@ import { ethers } from "ethers";
 
 import {
   ALICE_ADDRESS_THETA,
-  EVM_RPC_EVMOS,
+  EVM_RPC_EVMOS_TESTNET,
   FAUCET_ADDRESS_EVMOS,
   FAUCET_ADDRESS_EVMOS_EVM,
   FAUCET_ADDRESS_THETA,
@@ -50,7 +50,7 @@ async function main() {
   console.log("Alice balance before:", await evmosClient.getAllBalances(METAMASK_ADDRESS_EVMOS));
   console.log("Faucet balance before:", await evmosClient.getAllBalances(FAUCET_ADDRESS_EVMOS));
 
-  const provider = new ethers.providers.JsonRpcProvider(EVM_RPC_EVMOS);
+  const provider = new ethers.providers.JsonRpcProvider(EVM_RPC_EVMOS_TESTNET);
   const wallet = new ethers.Wallet(METAMASK_PRIVATE_KEY, provider);
 
   const evmosTx = await wallet.sendTransaction({

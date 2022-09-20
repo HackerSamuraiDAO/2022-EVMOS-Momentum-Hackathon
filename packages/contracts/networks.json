@@ -13,7 +13,7 @@
     "rpc": "https://rinkeby.infura.io/v3/95f65ab099894076814e8526f52c9149"
   },
   "9000": {
-    "name": "Evmos",
+    "name": "Evmos-Testnet",
     "domain": 1,
     "contracts": {
       "wrapped721": "0xa61241a9D6a1EFA4F468d49d76Ac158F6aB29240",
@@ -24,5 +24,18 @@
     },
     "explorer": "https://evm.evmos.dev/",
     "rpc": "https://eth.bd.evmos.dev:8545"
+  },
+  "9001": {
+    "name": "Evmos",
+    "domain": 0,
+    "contracts": {
+      "wrapped721": "0x58797753a707EF625b1D4c93F39e052958210c04",
+      "executor": "0xb646ae326e13CDCD3af48a1E561b6c6C6D6DeB73",
+      "handler": "0x86663851c047CAa2D0FB65835e3ddb019a87B99a",
+      "bridge": "0x2c9C362601193e3351f7cf529EC622455572f010",
+      "faucet": ""
+    },
+    "explorer": "https://evm.evmos.org/",
+    "rpc": "https://eth.bd.evmos.org:8545"
   }
 }

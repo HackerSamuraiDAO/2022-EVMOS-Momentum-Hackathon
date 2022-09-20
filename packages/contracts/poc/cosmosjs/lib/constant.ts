@@ -32,7 +32,8 @@ export const TENDERMINT_RPC_THETA = "rpc.sentry-01.theta-testnet.polypore.xyz:26
 export const TENDERMINT_RPC_OSMOSIS = "https://rpc-test.osmosis.zone";
 export const TENDERMINT_RPC_JUNO = "https://juno-testnet-rpc.polkachu.com";
 export const TENDERMINT_RPC_EVMOS = "https://tendermint.bd.evmos.dev:26657";
-export const EVM_RPC_EVMOS = "https://eth.bd.evmos.dev:8545";
+export const EVM_RPC_EVMOS_TESTNET = "https://eth.bd.evmos.dev:8545";
+export const EVM_RPC_EVMOS = "https://eth.bd.evmos.org:8545";
 export const REST_RPC_EVMOS = "https://rest.bd.evmos.org:1317";
 
 export const METAMASK_ADDRESS = "0x64478Fc1bc6726caf1D0366dC61eF44E7bD3C1bc";

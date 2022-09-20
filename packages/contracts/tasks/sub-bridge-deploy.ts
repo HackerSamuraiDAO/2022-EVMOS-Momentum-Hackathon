@@ -9,7 +9,8 @@ task("sub-bridge-deploy", "deploy bridge")
     const Hashi721Bridge = await ethers.getContractFactory(name);
     const hashi721Bridge = await Hashi721Bridge.deploy();
     await hashi721Bridge.deployed();
-    await hashi721Bridge.initialize(selfDomain, handler, wrapped721);
+    const tx = await hashi721Bridge.initialize(selfDomain, handler, wrapped721);
+    tx.wait()
     console.log(name, "deployed to:", hashi721Bridge.address);
     return hashi721Bridge.address;
   });

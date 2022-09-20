@@ -11,9 +11,9 @@ import "./tasks/verify";
 import { HardhatUserConfig } from "hardhat/config";
 
 import networks from "./networks.json";
-import { EVM_RPC_EVMOS, METAMASK_PRIVATE_KEY } from "./poc/cosmosjs/lib/constant";
+import { EVM_RPC_EVMOS, EVM_RPC_EVMOS_TESTNET, METAMASK_PRIVATE_KEY} from "./poc/cosmosjs/lib/constant";
 
-const accounts = [METAMASK_PRIVATE_KEY];
+const accounts = [process.env.PRIVATE_KEY || METAMASK_PRIVATE_KEY];
 
 const config: HardhatUserConfig = {
   solidity: "0.8.15",
@@ -23,10 +23,15 @@ const config: HardhatUserConfig = {
       url: networks["4"].rpc,
       accounts,
     },
+    evmosTestNet: {
+      url: EVM_RPC_EVMOS_TESTNET,
+      accounts,
+      chainId: 9000,
+    },
     evmos: {
       url: EVM_RPC_EVMOS,
       accounts,
-      chainId: 9000,
+      chainId: 9001,
     },
   },
 };

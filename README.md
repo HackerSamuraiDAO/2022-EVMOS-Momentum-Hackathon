@@ -18,6 +18,9 @@ https://github.com/HackerSamuraiDAO/2022-EVMOS-Momentum-Hackathon/issues/7
 
 ### Deployed Contract
 
+Main contract deployed on EVMOS Mainnet
+https://evm.evmos.org/address/0x2c9C362601193e3351f7cf529EC622455572f010/transactions
+
 Deployed contract info is kept here.
 
 https://github.com/HackerSamuraiDAO/2022-EVMOS-Momentum-Hackathon/blob/main/packages/contracts/networks.json

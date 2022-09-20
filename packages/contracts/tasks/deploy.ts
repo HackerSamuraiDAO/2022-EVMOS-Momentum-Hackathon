@@ -5,13 +5,19 @@ import path from "path";
 import networks from "../networks.json";
 import { isChainId } from "../types/network";
 
-task("deploy", "deploy").setAction(async (_, { network, run }) => {
+task("deploy", "deploy").setAction(async (_, { network, run, ethers }) => {
+
+  const [signer] = await ethers.getSigners()
+  console.log(signer.address)
+
   const { config } = network;
   const chainId = config.chainId?.toString();
   if (!isChainId(chainId)) {
     console.log("network invalid");
     return;
   }
+
+  
   const { domain } = networks[chainId];
   const selfDomain = domain.toString();
   const wrapped721 = await run("sub-wrapped-721-deploy");

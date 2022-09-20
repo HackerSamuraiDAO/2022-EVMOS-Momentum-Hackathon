@@ -7,7 +7,8 @@ task("sub-handler-deploy", "deploy handler")
     const HashiHandler = await ethers.getContractFactory(name);
     const hashiHandler = await HashiHandler.deploy();
     await hashiHandler.deployed();
-    await hashiHandler.initialize(executor);
+    const tx = await hashiHandler.initialize(executor);
+    await tx.wait();
     console.log(name, "deployed to:", hashiHandler.address);
     return hashiHandler.address;
   });

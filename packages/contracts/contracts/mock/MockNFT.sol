@@ -6,5 +6,4 @@ import "@openzeppelin/contracts/token/ERC721/presets/ERC721PresetMinterPauserAut
 contract MockNFT is ERC721PresetMinterPauserAutoId {
   // solhint-disable-next-line no-empty-blocks
   constructor(string memory baseURI) ERC721PresetMinterPauserAutoId("", "", baseURI) {}
-  
 }

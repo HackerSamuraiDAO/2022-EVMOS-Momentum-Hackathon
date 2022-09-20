@@ -5,7 +5,7 @@ import "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 
 contract HashiExecutor is Initializable, OwnableUpgradeable {
-  mapping (bytes32 => bool) public executed;
+  mapping(bytes32 => bool) public executed;
 
   address private _originSender;
   uint32 private _origin;
@@ -24,8 +24,8 @@ contract HashiExecutor is Initializable, OwnableUpgradeable {
     bytes memory callData
   ) public onlyOwner {
     /*
-    * @dev: add rollup validation here
-    */
+     * @dev: add rollup validation here
+     */
     require(!executed[hash], "HashiExecutor: hash invalid");
     _origin = originDomain;
     _originSender = originSender_;
