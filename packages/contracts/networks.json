@@ -33,7 +33,7 @@
       "executor": "0xb646ae326e13CDCD3af48a1E561b6c6C6D6DeB73",
       "handler": "0x86663851c047CAa2D0FB65835e3ddb019a87B99a",
       "bridge": "0x2c9C362601193e3351f7cf529EC622455572f010",
-      "faucet": ""
+      "faucet": "0xdb262F5E2B7a86678E89054b545D1c8FA676b899"
     },
     "explorer": "https://evm.evmos.org/",
     "rpc": "https://eth.bd.evmos.org:8545"

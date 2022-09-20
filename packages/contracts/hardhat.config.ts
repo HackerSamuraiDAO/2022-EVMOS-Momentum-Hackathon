@@ -4,6 +4,7 @@ import "./tasks/register";
 import "./tasks/sub-bridge-deploy";
 import "./tasks/sub-bridge-register";
 import "./tasks/sub-executor-deploy";
+import "./tasks/sub-faucet-deploy";
 import "./tasks/sub-handler-deploy";
 import "./tasks/sub-wrapped-721-deploy";
 import "./tasks/verify";
